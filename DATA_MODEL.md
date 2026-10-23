@@ -1,5 +1,7 @@
 # RIDO Data Model Contract
 
+**历史模型文档：本页记录早期 Room v5 设计；当前 RIDO 使用 Room v7，请以 `app/schemas/` 中的 v7 JSON 和当前源码为准。**
+
 This document describes the current Room v5 schema. `RidoDatabase` uses database file `rido.db`, version `5`, and exports its canonical schema to `app/schemas/`. Entities use stable primitive storage; UI formatting never enters the database.
 
 ## Time representation

@@ -1,5 +1,7 @@
 # Release, Security and Privacy Baseline
 
+**发布规划文档：下文是设计基线，不代表当前已经完成发布或应用商店上架。**
+
 ## Release identity and build
 
 - Project: `RIDO`.

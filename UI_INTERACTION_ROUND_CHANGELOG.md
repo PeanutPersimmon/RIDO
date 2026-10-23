@@ -1,5 +1,7 @@
 # RIDO 本轮 UI 修改记录
 
+**历史开发记录：文中的实现与验证状态以记录当时为准，当前功能请以源码为准。**
+
 范围：地点、预计用时、Task 固定时间布局、MyLibrary 标签 UI 迁移、四主页面程序化切换、模式选择和 Today 时间轴范围。
 
 ## 实现结果
@@ -14,7 +16,7 @@
 
 ## MyLibrary 实际来源与直接迁移
 
-原项目根：D:/Wenjian/Study/MyLibrary/app/src/main/java/com/example/mylibrary/
+原项目根：MyLibrary 原型项目源码目录（未纳入本仓库）
 
 | 原文件 | 直接迁移内容 | RIDO 目标 |
 | --- | --- | --- |
@@ -77,55 +79,55 @@
 
 ### 新增（17 个生产文件、2 个测试文件、本报告）
 
-- [ui/feature/editor/components/TaskTimeLayout.kt](D:/Wenjian/Study/RIDO/app/src/main/java/io/github/peanutpersimmon/rido/ui/feature/editor/components/TaskTimeLayout.kt)
-- [ui/feature/editor/components/EditorTimeTool.kt](D:/Wenjian/Study/RIDO/app/src/main/java/io/github/peanutpersimmon/rido/ui/feature/editor/components/EditorTimeTool.kt)
-- [domain/usecase/GetRecentLocationsUseCase.kt](D:/Wenjian/Study/RIDO/app/src/main/java/io/github/peanutpersimmon/rido/domain/usecase/GetRecentLocationsUseCase.kt)
-- [data/repository/RoomLocationHistoryRepository.kt](D:/Wenjian/Study/RIDO/app/src/main/java/io/github/peanutpersimmon/rido/data/repository/RoomLocationHistoryRepository.kt)
-- [domain/usecase/GetTimelineDisplaySourcesUseCase.kt](D:/Wenjian/Study/RIDO/app/src/main/java/io/github/peanutpersimmon/rido/domain/usecase/GetTimelineDisplaySourcesUseCase.kt)
-- [presentation/today/TimelineEndpointMapper.kt](D:/Wenjian/Study/RIDO/app/src/main/java/io/github/peanutpersimmon/rido/presentation/today/TimelineEndpointMapper.kt)
-- [ui/feature/tags/library/TagManagementScreen.kt](D:/Wenjian/Study/RIDO/app/src/main/java/io/github/peanutpersimmon/rido/ui/feature/tags/library/TagManagementScreen.kt)
-- [ui/feature/tags/library/RootTagCapsules.kt](D:/Wenjian/Study/RIDO/app/src/main/java/io/github/peanutpersimmon/rido/ui/feature/tags/library/RootTagCapsules.kt)
-- [ui/feature/tags/library/ChildTagList.kt](D:/Wenjian/Study/RIDO/app/src/main/java/io/github/peanutpersimmon/rido/ui/feature/tags/library/ChildTagList.kt)
-- [ui/feature/tags/library/TagManagementMessages.kt](D:/Wenjian/Study/RIDO/app/src/main/java/io/github/peanutpersimmon/rido/ui/feature/tags/library/TagManagementMessages.kt)
-- [ui/feature/tags/library/TagManagementDialogs.kt](D:/Wenjian/Study/RIDO/app/src/main/java/io/github/peanutpersimmon/rido/ui/feature/tags/library/TagManagementDialogs.kt)
-- [ui/feature/tags/library/TagDialogControls.kt](D:/Wenjian/Study/RIDO/app/src/main/java/io/github/peanutpersimmon/rido/ui/feature/tags/library/TagDialogControls.kt)
-- [ui/feature/tags/library/TagManagementUiState.kt](D:/Wenjian/Study/RIDO/app/src/main/java/io/github/peanutpersimmon/rido/ui/feature/tags/library/TagManagementUiState.kt)
-- [ui/feature/tags/library/TagSelectionSheet.kt](D:/Wenjian/Study/RIDO/app/src/main/java/io/github/peanutpersimmon/rido/ui/feature/tags/library/TagSelectionSheet.kt)
-- [ui/feature/tags/library/AppCapsule.kt](D:/Wenjian/Study/RIDO/app/src/main/java/io/github/peanutpersimmon/rido/ui/feature/tags/library/AppCapsule.kt)
-- [ui/feature/tags/library/LibrarySearchField.kt](D:/Wenjian/Study/RIDO/app/src/main/java/io/github/peanutpersimmon/rido/ui/feature/tags/library/LibrarySearchField.kt)
-- [ui/feature/tags/library/LibraryTagAdapters.kt](D:/Wenjian/Study/RIDO/app/src/main/java/io/github/peanutpersimmon/rido/ui/feature/tags/library/LibraryTagAdapters.kt)
-- [app/src/test/java/io/github/peanutpersimmon/rido/ui/feature/today/TimelineCardLayoutTest.kt](D:/Wenjian/Study/RIDO/app/src/test/java/io/github/peanutpersimmon/rido/ui/feature/today/TimelineCardLayoutTest.kt)
-- [app/src/test/java/io/github/peanutpersimmon/rido/presentation/today/TimelineEndpointMapperTest.kt](D:/Wenjian/Study/RIDO/app/src/test/java/io/github/peanutpersimmon/rido/presentation/today/TimelineEndpointMapperTest.kt)
-- [UI_INTERACTION_ROUND_CHANGELOG.md](D:/Wenjian/Study/RIDO/UI_INTERACTION_ROUND_CHANGELOG.md)
+- [ui/feature/editor/components/TaskTimeLayout.kt](app/src/main/java/io/github/peanutpersimmon/rido/ui/feature/editor/components/TaskTimeLayout.kt)
+- [ui/feature/editor/components/EditorTimeTool.kt](app/src/main/java/io/github/peanutpersimmon/rido/ui/feature/editor/components/EditorTimeTool.kt)
+- [domain/usecase/GetRecentLocationsUseCase.kt](app/src/main/java/io/github/peanutpersimmon/rido/domain/usecase/GetRecentLocationsUseCase.kt)
+- [data/repository/RoomLocationHistoryRepository.kt](app/src/main/java/io/github/peanutpersimmon/rido/data/repository/RoomLocationHistoryRepository.kt)
+- [domain/usecase/GetTimelineDisplaySourcesUseCase.kt](app/src/main/java/io/github/peanutpersimmon/rido/domain/usecase/GetTimelineDisplaySourcesUseCase.kt)
+- [presentation/today/TimelineEndpointMapper.kt](app/src/main/java/io/github/peanutpersimmon/rido/presentation/today/TimelineEndpointMapper.kt)
+- [ui/feature/tags/library/TagManagementScreen.kt](app/src/main/java/io/github/peanutpersimmon/rido/ui/feature/tags/library/TagManagementScreen.kt)
+- `ui/feature/tags/library/RootTagCapsules.kt`
+- [ui/feature/tags/library/ChildTagList.kt](app/src/main/java/io/github/peanutpersimmon/rido/ui/feature/tags/library/ChildTagList.kt)
+- [ui/feature/tags/library/TagManagementMessages.kt](app/src/main/java/io/github/peanutpersimmon/rido/ui/feature/tags/library/TagManagementMessages.kt)
+- `ui/feature/tags/library/TagManagementDialogs.kt`
+- `ui/feature/tags/library/TagDialogControls.kt`
+- [ui/feature/tags/library/TagManagementUiState.kt](app/src/main/java/io/github/peanutpersimmon/rido/ui/feature/tags/library/TagManagementUiState.kt)
+- [ui/feature/tags/library/TagSelectionSheet.kt](app/src/main/java/io/github/peanutpersimmon/rido/ui/feature/tags/library/TagSelectionSheet.kt)
+- [ui/feature/tags/library/AppCapsule.kt](app/src/main/java/io/github/peanutpersimmon/rido/ui/feature/tags/library/AppCapsule.kt)
+- [ui/feature/tags/library/LibrarySearchField.kt](app/src/main/java/io/github/peanutpersimmon/rido/ui/feature/tags/library/LibrarySearchField.kt)
+- [ui/feature/tags/library/LibraryTagAdapters.kt](app/src/main/java/io/github/peanutpersimmon/rido/ui/feature/tags/library/LibraryTagAdapters.kt)
+- [app/src/test/java/io/github/peanutpersimmon/rido/ui/feature/today/TimelineCardLayoutTest.kt](app/src/test/java/io/github/peanutpersimmon/rido/ui/feature/today/TimelineCardLayoutTest.kt)
+- [app/src/test/java/io/github/peanutpersimmon/rido/presentation/today/TimelineEndpointMapperTest.kt](app/src/test/java/io/github/peanutpersimmon/rido/presentation/today/TimelineEndpointMapperTest.kt)
+- [UI_INTERACTION_ROUND_CHANGELOG.md](UI_INTERACTION_ROUND_CHANGELOG.md)
 
 ### 修改（18 个生产文件、1 个测试文件）
 
-- [MainActivity.kt](D:/Wenjian/Study/RIDO/app/src/main/java/io/github/peanutpersimmon/rido/MainActivity.kt)
-- [data/local/room/dao/EventDao.kt](D:/Wenjian/Study/RIDO/app/src/main/java/io/github/peanutpersimmon/rido/data/local/room/dao/EventDao.kt)
-- [presentation/settings/MetadataViewModel.kt](D:/Wenjian/Study/RIDO/app/src/main/java/io/github/peanutpersimmon/rido/presentation/settings/MetadataViewModel.kt)
-- [presentation/today/TodayViewModel.kt](D:/Wenjian/Study/RIDO/app/src/main/java/io/github/peanutpersimmon/rido/presentation/today/TodayViewModel.kt)
-- [presentation/today/TodayUiMapper.kt](D:/Wenjian/Study/RIDO/app/src/main/java/io/github/peanutpersimmon/rido/presentation/today/TodayUiMapper.kt)
-- [presentation/today/TodayUiModels.kt](D:/Wenjian/Study/RIDO/app/src/main/java/io/github/peanutpersimmon/rido/presentation/today/TodayUiModels.kt)
-- [ui/RidoApp.kt](D:/Wenjian/Study/RIDO/app/src/main/java/io/github/peanutpersimmon/rido/ui/RidoApp.kt)
-- [ui/feature/settings/SettingsContent.kt](D:/Wenjian/Study/RIDO/app/src/main/java/io/github/peanutpersimmon/rido/ui/feature/settings/SettingsContent.kt)
-- [ui/feature/editor/components/LocationTool.kt](D:/Wenjian/Study/RIDO/app/src/main/java/io/github/peanutpersimmon/rido/ui/feature/editor/components/LocationTool.kt)
-- [ui/feature/editor/components/EstimatedDurationField.kt](D:/Wenjian/Study/RIDO/app/src/main/java/io/github/peanutpersimmon/rido/ui/feature/editor/components/EstimatedDurationField.kt)
-- [ui/feature/editor/components/EditorFields.kt](D:/Wenjian/Study/RIDO/app/src/main/java/io/github/peanutpersimmon/rido/ui/feature/editor/components/EditorFields.kt)
-- [ui/feature/editor/components/ClassificationPickers.kt](D:/Wenjian/Study/RIDO/app/src/main/java/io/github/peanutpersimmon/rido/ui/feature/editor/components/ClassificationPickers.kt)
-- [ui/feature/editor/task/TaskEditorSheet.kt](D:/Wenjian/Study/RIDO/app/src/main/java/io/github/peanutpersimmon/rido/ui/feature/editor/task/TaskEditorSheet.kt)
-- [ui/feature/tags/TagManagementSheet.kt](D:/Wenjian/Study/RIDO/app/src/main/java/io/github/peanutpersimmon/rido/ui/feature/tags/TagManagementSheet.kt)
-- [ui/feature/tags/TagSelectionSheet.kt](D:/Wenjian/Study/RIDO/app/src/main/java/io/github/peanutpersimmon/rido/ui/feature/tags/TagSelectionSheet.kt)
-- [ui/feature/today/TimelineCardLayout.kt](D:/Wenjian/Study/RIDO/app/src/main/java/io/github/peanutpersimmon/rido/ui/feature/today/TimelineCardLayout.kt)
-- [ui/feature/today/TimelineAxis.kt](D:/Wenjian/Study/RIDO/app/src/main/java/io/github/peanutpersimmon/rido/ui/feature/today/TimelineAxis.kt)
-- [ui/feature/today/TodayTimeline.kt](D:/Wenjian/Study/RIDO/app/src/main/java/io/github/peanutpersimmon/rido/ui/feature/today/TodayTimeline.kt)
-- [app/src/androidTest/java/io/github/peanutpersimmon/rido/ui/EditorMetadataTest.kt](D:/Wenjian/Study/RIDO/app/src/androidTest/java/io/github/peanutpersimmon/rido/ui/EditorMetadataTest.kt)
+- [MainActivity.kt](app/src/main/java/io/github/peanutpersimmon/rido/MainActivity.kt)
+- [data/local/room/dao/EventDao.kt](app/src/main/java/io/github/peanutpersimmon/rido/data/local/room/dao/EventDao.kt)
+- [presentation/settings/MetadataViewModel.kt](app/src/main/java/io/github/peanutpersimmon/rido/presentation/settings/MetadataViewModel.kt)
+- [presentation/today/TodayViewModel.kt](app/src/main/java/io/github/peanutpersimmon/rido/presentation/today/TodayViewModel.kt)
+- [presentation/today/TodayUiMapper.kt](app/src/main/java/io/github/peanutpersimmon/rido/presentation/today/TodayUiMapper.kt)
+- [presentation/today/TodayUiModels.kt](app/src/main/java/io/github/peanutpersimmon/rido/presentation/today/TodayUiModels.kt)
+- [ui/RidoApp.kt](app/src/main/java/io/github/peanutpersimmon/rido/ui/RidoApp.kt)
+- [ui/feature/settings/SettingsContent.kt](app/src/main/java/io/github/peanutpersimmon/rido/ui/feature/settings/SettingsContent.kt)
+- [ui/feature/editor/components/LocationTool.kt](app/src/main/java/io/github/peanutpersimmon/rido/ui/feature/editor/components/LocationTool.kt)
+- [ui/feature/editor/components/EstimatedDurationField.kt](app/src/main/java/io/github/peanutpersimmon/rido/ui/feature/editor/components/EstimatedDurationField.kt)
+- [ui/feature/editor/components/EditorFields.kt](app/src/main/java/io/github/peanutpersimmon/rido/ui/feature/editor/components/EditorFields.kt)
+- [ui/feature/editor/components/ClassificationPickers.kt](app/src/main/java/io/github/peanutpersimmon/rido/ui/feature/editor/components/ClassificationPickers.kt)
+- [ui/feature/editor/task/TaskEditorSheet.kt](app/src/main/java/io/github/peanutpersimmon/rido/ui/feature/editor/task/TaskEditorSheet.kt)
+- [ui/feature/tags/TagManagementSheet.kt](app/src/main/java/io/github/peanutpersimmon/rido/ui/feature/tags/TagManagementSheet.kt)
+- [ui/feature/tags/TagSelectionSheet.kt](app/src/main/java/io/github/peanutpersimmon/rido/ui/feature/tags/TagSelectionSheet.kt)
+- [ui/feature/today/TimelineCardLayout.kt](app/src/main/java/io/github/peanutpersimmon/rido/ui/feature/today/TimelineCardLayout.kt)
+- [ui/feature/today/TimelineAxis.kt](app/src/main/java/io/github/peanutpersimmon/rido/ui/feature/today/TimelineAxis.kt)
+- [ui/feature/today/TodayTimeline.kt](app/src/main/java/io/github/peanutpersimmon/rido/ui/feature/today/TodayTimeline.kt)
+- [app/src/androidTest/java/io/github/peanutpersimmon/rido/ui/EditorMetadataTest.kt](app/src/androidTest/java/io/github/peanutpersimmon/rido/ui/EditorMetadataTest.kt)
 
 ### 删除（4 个被直接迁移版本替代的旧组件）
 
-- D:/Wenjian/Study/RIDO/app/src/main/java/io/github/peanutpersimmon/rido/ui/feature/tags/RootTagReorder.kt
-- D:/Wenjian/Study/RIDO/app/src/main/java/io/github/peanutpersimmon/rido/ui/feature/tags/ChildTagReorder.kt
-- D:/Wenjian/Study/RIDO/app/src/main/java/io/github/peanutpersimmon/rido/ui/feature/tags/TagBatchAddDialog.kt
-- D:/Wenjian/Study/RIDO/app/src/main/java/io/github/peanutpersimmon/rido/ui/feature/tags/TagPill.kt
+- `app/src/main/java/io/github/peanutpersimmon/rido/ui/feature/tags/RootTagReorder.kt`（历史文件名）
+- `app/src/main/java/io/github/peanutpersimmon/rido/ui/feature/tags/ChildTagReorder.kt`（历史文件名）
+- `app/src/main/java/io/github/peanutpersimmon/rido/ui/feature/tags/TagBatchAddDialog.kt`（历史文件名）
+- `app/src/main/java/io/github/peanutpersimmon/rido/ui/feature/tags/TagPill.kt`（历史文件名）
 
 删除的仅是未被调用的旧 UI 组件，不涉及用户数据；未操作 Git，因此本轮未创建 Git 恢复点。
 
